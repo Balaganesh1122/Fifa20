@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FIFA 20 Player Platform</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">
+        <img src="/static/images/fifa_logo.png" class="logo-img">
+        <span>FIFA</span>
+    </div>
+    <div class="navbar">
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/players">Players</a>
+        <a href="/problem-statement">Problem Statement</a>
+        <a href="/compare">Compare</a>
+    </div>
+</div>
+
+</div>
+
+<!-- HERO WITH VIDEO -->
+<div class="hero-video">
+    <video autoplay muted loop>
+        <source src="/static/videos/fifa_bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay">
+        <h1>FIFA 20 Player Intelligence Platform</h1>
+        <p>
+            Advanced football analytics, scouting insights, and player intelligence
+        </p>
+        <a href="/players" class="cta-btn">Explore Players</a>
+    </div>
+</div>
+
+<section class="highlights">
+    <div class="highlight-card">
+        <h3>⚡ Player Attributes</h3>
+        <p>Analyze pace, shooting, passing, dribbling and physical strength of every player.</p>
+    </div>
+
+    <div class="highlight-card">
+        <h3>📊 Smart Comparison</h3>
+        <p>Compare two players side-by-side and find who performs better overall.</p>
+    </div>
+
+    <div class="highlight-card">
+        <h3>🌍 Global Coverage</h3>
+        <p>Explore players from multiple nationalities, leagues and clubs.</p>
+    </div>
+
+    <div class="highlight-card">
+        <h3>🎯 Scouting Intelligence</h3>
+        <p>Identify top performers and hidden talents using FIFA analytics.</p>
+    </div>
+</section>
+
+<section class="dataset-insights">
+    <h2>FIFA 20 Dataset Insights</h2>
+
+    <div class="insight-grid">
+        <div class="insight-box">
+            <h3>17,000+</h3>
+            <p>Professional Players</p>
+        </div>
+
+        <div class="insight-box">
+            <h3>100+</h3>
+            <p>Nationalities</p>
+        </div>
+
+        <div class="insight-box">
+            <h3>700+</h3>
+            <p>Clubs Worldwide</p>
+        </div>
+
+        <div class="insight-box">
+            <h3>30+</h3>
+            <p>Player Attributes</p>
+        </div>
+    </div>
+</section>
+
+<section class="top-players">
+    <h2>Top Rated Players</h2>
+
+    <div class="player-preview-grid">
+        <div class="player-preview-card">
+            <h3>L. Messi</h3>
+            <p>Overall: 94</p>
+            <p>Dribbling: 96</p>
+        </div>
+
+        <div class="player-preview-card">
+            <h3>C. Ronaldo</h3>
+            <p>Overall: 93</p>
+            <p>Shooting: 93</p>
+        </div>
+
+        <div class="player-preview-card">
+            <h3>Neymar Jr</h3>
+            <p>Overall: 92</p>
+            <p>Skill Moves: 5★</p>
+        </div>
+    </div>
+</section>
+
+<section class="why-platform">
+    <h2>Why FIFA Intelligence?</h2>
+
+    <ul>
+        <li>✔ Data-driven football insights</li>
+        <li>✔ Easy player comparison</li>
+        <li>✔ Clean and modern UI</li>
+        <li>✔ Built using real FIFA 20 dataset</li>
+        <li>✔ Ideal for analysts, scouts & fans</li>
+    </ul>
+</section>
+
+<section class="cta-section">
+    <h2>Start Exploring Players Now</h2>
+    <a href="{{ url_for('players') }}" class="cta-btn">Explore Players</a>
+</section>
+
+
+</body>
+</html>

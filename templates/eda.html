@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analytics | FIFA Intelligence</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<!-- DASHBOARD NAVBAR -->
+<div class="navbar">
+  <div class="logo">
+    <a href="/">
+      <img src="/static/images/fifa_logo.png" class="logo-img">
+      <span>FIFA Intelligence</span>
+    </a>
+  </div>
+
+  <div class="navbar">
+    <div class="brand">
+        <img src="{{ url_for('static', filename='images/fifa_logo.png') }}" alt="FIFA Logo">
+        <span>FIFA Intelligence</span>
+    </div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/players">Players</a>
+        <a href="/problem-statement">Problem Statement</a>
+        <a href="/compare">Compare</a>
+    </div>
+</div>
+
+</div>
+
+
+<div class="dashboard-bg">
+
+  <h1 class="section-title">📊 Data Analytics</h1>
+
+  <div class="dashboard-card">
+    <h2>Top 10 Countries with Most Players</h2>
+    <p>Countries producing the highest number of elite footballers.</p>
+    <img src="/static/plots/top_nations.png">
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Age Distribution of Players</h2>
+    <p>Shows the age range where player performance peaks.</p>
+    <img src="/static/plots/age_dist.png">
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Overall Rating Distribution</h2>
+    <p>Most players fall between ratings 65–80.</p>
+    <img src="/static/plots/overall_dist.png">
+  </div>
+
+</div>
+
+</body>
+</html>

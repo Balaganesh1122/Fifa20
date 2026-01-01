@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ player.short_name }} | FIFA 20 Intelligence</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="elite-body">
+
+<!-- TOP BAR -->
+<div class="elite-topbar">
+    <a href="/" class="elite-logo">
+        <img src="/static/images/fifa_logo.png">
+        <span>FIFA Intelligence</span>
+    </a>
+</div>
+
+<!-- HERO PROFILE -->
+<section class="elite-hero">
+
+    <!-- LEFT: PLAYER IMAGE -->
+    <div class="elite-image">
+        <img src="/static/{{ player_image }}"
+             onerror="this.onerror=null;this.src='/static/images/default_player.png';"
+             loading="lazy">
+    </div>
+
+    <!-- RIGHT: PLAYER INFO -->
+    <div class="elite-info">
+        <h1>{{ player.short_name }}</h1>
+        <p class="elite-sub">
+            {{ player.nationality }} • {{ player.club }}
+        </p>
+
+        <div class="elite-rating">
+            <div class="rating-circle">{{ player.overall }}</div>
+            <div class="rating-text">
+                <span>Overall</span>
+                <small>Potential {{ player.potential }}</small>
+            </div>
+        </div>
+
+        <div class="elite-meta">
+            <div><b>Position</b><span>{{ player.player_positions }}</span></div>
+            <div><b>Age</b><span>{{ player.age }}</span></div>
+            <div><b>Height</b><span>{{ player.height_cm }} cm</span></div>
+            <div><b>Weight</b><span>{{ player.weight_kg }} kg</span></div>
+            <div><b>Foot</b><span>{{ player.preferred_foot }}</span></div>
+            <div><b>Value</b><span>€{{ player.value_eur }}</span></div>
+        </div>
+    </div>
+
+</section>
+
+<!-- SKILL SNAPSHOT -->
+<section class="elite-skills">
+
+    <div class="skill-card">
+        <span>Pace</span>
+        <strong>{{ player.pace }}</strong>
+    </div>
+
+    <div class="skill-card">
+        <span>Shooting</span>
+        <strong>{{ player.shooting }}</strong>
+    </div>
+
+    <div class="skill-card">
+        <span>Passing</span>
+        <strong>{{ player.passing }}</strong>
+    </div>
+
+    <div class="skill-card">
+        <span>Dribbling</span>
+        <strong>{{ player.dribbling }}</strong>
+    </div>
+
+    <div class="skill-card dark">
+        <span>Defending</span>
+        <strong>{{ player.defending }}</strong>
+    </div>
+
+    <div class="skill-card dark">
+        <span>Physic</span>
+        <strong>{{ player.physic }}</strong>
+    </div>
+
+</section>
+
+<!-- DETAIL PANELS -->
+<section class="elite-panels">
+
+    <div class="panel">
+        <h3>Contract & Financial</h3>
+        <p>Wage: €{{ player.wage_eur }}</p>
+        <p>Release Clause: €{{ player.release_clause_eur }}</p>
+        <p>Contract Until: {{ player.contract_valid_until }}</p>
+    </div>
+
+    <div class="panel">
+        <h3>Traits & Intelligence</h3>
+        <p>{{ player.player_traits or "No special traits recorded" }}</p>
+    </div>
+
+    <div class="panel">
+        <h3>Work Profile</h3>
+        <p>Work Rate: {{ player.work_rate }}</p>
+        <p>International Rep: {{ player.international_reputation }}</p>
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Players | FIFA Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="compare-bg">
+
+{% include "navbar.html" %}
+
+<div class="compare-page">
+
+    <!-- ================= TOP TITLE ================= -->
+    <div class="compare-header">
+        <h1>Compare Players</h1>
+    </div>
+
+    <!-- ================= INPUT FORM ================= -->
+    <form method="post" class="compare-form">
+        <input type="text" name="player1" placeholder="Enter Player 1 name" required>
+        <input type="text" name="player2" placeholder="Enter Player 2 name" required>
+        <button type="submit">Compare</button>
+    </form>
+
+    {% if result %}
+
+    <!-- ================= MIDDLE COMPARISON ================= -->
+    <div class="compare-center">
+
+        <!-- PLAYER 1 -->
+        <div class="glass-card compare-card">
+            <img src="{{ url_for('static', filename=result.p1_img) }}" class="compare-img">
+            <h3>{{ result.p1.short_name }}</h3>
+            <p>{{ result.p1.club }} | {{ result.p1.nationality }}</p>
+
+            <ul>
+                <li>Pace: {{ result.p1.pace }}</li>
+                <li>Shooting: {{ result.p1.shooting }}</li>
+                <li>Passing: {{ result.p1.passing }}</li>
+                <li>Dribbling: {{ result.p1.dribbling }}</li>
+                <li>Physic: {{ result.p1.physic }}</li>
+            </ul>
+        </div>
+
+        <div class="vs-text">VS</div>
+
+        <!-- PLAYER 2 -->
+        <div class="glass-card compare-card">
+            <img src="{{ url_for('static', filename=result.p2_img) }}" class="compare-img">
+            <h3>{{ result.p2.short_name }}</h3>
+            <p>{{ result.p2.club }} | {{ result.p2.nationality }}</p>
+
+            <ul>
+                <li>Pace: {{ result.p2.pace }}</li>
+                <li>Shooting: {{ result.p2.shooting }}</li>
+                <li>Passing: {{ result.p2.passing }}</li>
+                <li>Dribbling: {{ result.p2.dribbling }}</li>
+                <li>Physic: {{ result.p2.physic }}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ================= BOTTOM WINNER ================= -->
+    <div class="winner-section">
+        <div class="glass-card winner-card">
+            <h2>🏆 Best Player</h2>
+            <h3>{{ result.winner }}</h3>
+            <p>{{ result.reason }}</p>
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

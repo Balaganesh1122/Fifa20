@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Problem Statement | FIFA </title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="problem-bg">
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="brand">
+        <img src="{{ url_for('static', filename='images/fifa_logo.png') }}" alt="FIFA Logo">
+        <span>FIFA </span>
+    </div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/players">Players</a>
+        <a href="/problem-statement" class="active">Problem Statement</a>
+        <a href="/compare">Compare</a>
+    </div>
+</div>
+
+<!-- PAGE WRAPPER -->
+<div class="problem-wrapper">
+
+    <!-- PAGE HEADER -->
+    <div class="glass header-card">
+        <h1>FIFA 20 Dashboard</h1>
+        <p>
+            This dashboard explores FIFA 20 player data using analytics,
+            clustering, and machine learning techniques to uncover
+            football intelligence insights.
+        </p>
+    </div>
+
+    <!-- INTERNAL NAV -->
+    <div class="problem-nav glass">
+        <a href="#eda">EDA & Analytics</a>
+        <a href="#clustering">Clustering</a>
+        <a href="#ml">ML Insights</a>
+    </div>
+
+    <!-- EDA SECTION -->
+    <section id="eda" class="glass problem-card">
+        <h2>📊 Exploratory Data Analysis</h2>
+        <ul>
+            <li>Top 10 countries producing professional football players</li>
+            <li>Distribution of overall ratings</li>
+            <li>Age vs performance trends</li>
+        </ul>
+
+        <div class="image-row">
+            <img src="/static/plots/top_nations.png" alt="Top Nations">
+            <img src="/static/plots/overall_dist.png" alt="Overall Distribution">
+            <img src="/static/plots/age_dist.png" alt="Age Distribution">
+        </div>
+    </section>
+
+    <!-- CLUSTERING SECTION -->
+    <section id="clustering" class="glass problem-card">
+        <h2>🧠 Player Clustering (PCA + KMeans)</h2>
+        <p>
+            Players are clustered based on six core skill attributes:
+            pace, shooting, passing, dribbling, defending, and physic.
+        </p>
+
+        <div class="center-img">
+            <img src="/static/plots/clusters.png" alt="Player Clustering">
+        </div>
+    </section>
+
+    <!-- ML SECTION -->
+    <section id="ml" class="glass problem-card">
+        <h2>⚽ Machine Learning Insights</h2>
+        <ul>
+            <li>Identify players with similar playing styles</li>
+            <li>Support scouting and replacement decisions</li>
+            <li>Analyze elite player attribute trends</li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>

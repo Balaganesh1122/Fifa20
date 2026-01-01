@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FIFA Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-overlay"></div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="brand">
+        <img src="{{ url_for('static', filename='images/fifa_logo.png') }}">
+        <span>FIFA Intelligence</span>
+    </div>
+
+    <a href="/players">Players</a>
+    <a href="/problem-statement">Problem Statement</a>
+    <a href="/compare">Compare</a>
+</div>
+
+<!-- MAIN -->
+<div class="main-content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

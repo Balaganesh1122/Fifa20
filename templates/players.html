@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Players | FIFA Intelligence</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<!-- Glass Search Bar -->
+<div class="glass-toolbar">
+    <form method="get" action="/players" class="glass-search-form">
+        <input type="text" name="name" placeholder="Search player name"
+               value="{{ query or '' }}">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<!-- Players Grid -->
+<div class="players-grid">
+{% for p in players %}
+    <div class="player-card glass">
+
+        <!-- ✅ FIXED IMAGE -->
+        <img
+          src="{{ url_for('static', filename='images/' ~ p.sofifa_id ~ '.png') }}"
+          onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/default_player.png') }}';"
+          class="player-photo"
+        >
+
+        <h3>{{ p.short_name }}</h3>
+        <p>{{ p.nationality }} | {{ p.club }}</p>
+        <p><b>Position:</b> {{ p.player_positions }}</p>
+        <p><b>Overall:</b> {{ p.overall }}</p>
+
+        <a href="/player/{{ p.sofifa_id }}" class="view-btn">
+            View Profile →
+        </a>
+    </div>
+{% endfor %}
+</div>
+
+<!-- Pagination -->
+<div class="pagination">
+{% if page > 1 %}
+    <a href="/players?page={{ page - 1 }}&name={{ query }}">← Prev</a>
+{% endif %}
+
+<span>Page {{ page }} of {{ total_pages }}</span>
+
+{% if page < total_pages %}
+    <a href="/players?page={{ page + 1 }}&name={{ query }}">Next →</a>
+{% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clustering | FIFA Intelligence</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<!-- DASHBOARD NAVBAR -->
+<div class="navbar">
+  <div class="logo">
+    <a href="/">
+      <img src="/static/images/fifa_logo.png" class="logo-img">
+      <span>FIFA Intelligence</span>
+    </a>
+  </div>
+
+  <div class="navbar">
+    <a href="/" class="logo">FIFA Intelligence</a>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/players">Players</a>
+        <a href="/problem-statement">Problem Statement</a>
+        <a href="/compare">Compare</a>
+    </div>
+</div>
+
+</div>
+
+
+<div class="dashboard-bg">
+
+  <h1 class="section-title">🧠 Player Clustering</h1>
+
+  <div class="dashboard-card">
+    <h2>Skill-Based Player Clusters</h2>
+    <p>
+      Players are grouped using PCA and KMeans based on
+      pace, shooting, passing, dribbling, defending, and physic.
+    </p>
+    <img src="/static/plots/clusters.png">
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Interpretation</h2>
+    <ul>
+      <li>Cluster 0: Attacking-focused players</li>
+      <li>Cluster 1: Balanced all-rounders</li>
+      <li>Cluster 2: Defensive specialists</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
